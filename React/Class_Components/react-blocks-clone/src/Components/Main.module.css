@@ -1,0 +1,9 @@
+#main_content {
+    min-height: 300px;
+    height: 400px;
+    width: 710px;
+    background-color: red;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+}
