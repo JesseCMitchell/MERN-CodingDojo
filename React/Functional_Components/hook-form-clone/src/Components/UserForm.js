@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Form, Button } from 'react-bootstrap'
 
+const InputForm = ({nameOfClass, name, placeholder, handleErrors}) => (
+    <div className="mb-3">
+        {/* htmlFor and name must match with key name in App.js State object */} 
+        <Form.Control type="text" className={nameOfClass} name={name} placeholder={placeholder} onChange={handleErrors}/>
+        {/* {errors.props.name ? <p className="text-danger small">{errors.props.name}</p> : "" } */}
+    </div>
+)
+
+
+
+
 const UserForm = props => {
     // Destructuring props into "inputs" and "setInputs" variables
     const { inputs, setInputs } = props;
@@ -53,27 +64,11 @@ const UserForm = props => {
             <h2>Sign Up</h2>
             <Form className="signup-form">
                 <Form.Group>
-                    <div className="mb-3">
-                        {/* htmlFor and name must match with key name in App.js State object */} 
-                        <Form.Control type="text" className="name-input" name="firstName" placeholder="First Name" onChange={handleErrors}/>
-                        {errors.firstName ? <p className="text-danger small">{errors.firstName}</p> : "" }
-                    </div>
-                    <div className="mb-3">
-                        <Form.Control type="text" className="name-input" name="lastName" placeholder="Last Name" onChange={handleErrors}/>
-                        {errors.lastName ? <p className="text-danger small">{errors.lastName}</p> : "" }
-                    </div>
-                    <div className="mb-3">
-                        <Form.Control type="text" className="email-input" name="email" placeholder="Email" onChange={handleErrors}/>
-                        {errors.email ? <p className="text-danger small">{errors.email}</p> : "" }
-                    </div>
-                    <div className="mb-3">
-                        <Form.Control type="text" className="password-input" name="password" placeholder="Password" onChange={handleErrors}/>
-                        {errors.password ? <p className="text-danger small">{errors.password}</p> : "" }
-                    </div>
-                    <div className="mb-3">
-                        <Form.Control type="text" className="password-input" name="confirmPassword" placeholder="Confirm Password" onChange={handleErrors}/>
-                        {errors.confirmPassword ? <p className="text-danger small">{errors.confirmPassword}</p> : "" }
-                    </div>
+                    <InputForm nameOfClass={"name-input"} name={"firstName"} placeholder={"First Name"} onChange={handleErrors}/>
+                    <InputForm nameOfClass={"name-input"} name={"lastName"} placeholder={"Last Name"} onChange={handleErrors}/>
+                    <InputForm nameOfClass={"email-input"} name={"email"} placeholder={"Email"} onChange={handleErrors}/>
+                    <InputForm nameOfClass={"password-input"} name={"password"} placeholder={"Password"} onChange={handleErrors}/>
+                    <InputForm nameOfClass={"password-input"} name={"confirmPassword"} placeholder={"Confirm Password"} onChange={handleErrors}/>
                     <div>
                         {(inputs.password != inputs.confirmPassword) ? <p className="text-danger small"> 
                         Passwords must match.</p> :''}
