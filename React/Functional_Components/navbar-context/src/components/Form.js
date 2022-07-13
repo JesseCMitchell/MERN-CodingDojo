@@ -1,12 +1,7 @@
 import React, { useContext } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Form } from 'react-bootstrap'
 
-const InputForm = ({nameOfClass, name, placeholder}) => (
-    <div className="mb-3">
-        <Form.Control type="text" className={nameOfClass} name={name} placeholder={placeholder}/>
-    </div>
-)
+
+import userContext from '../contexts/UserContext';
 
 const Form = () => {
     const {name, setName} = useContext(userContext);
@@ -17,11 +12,14 @@ const Form = () => {
 
     return (
         <div>
-            <Form>
-                <Form.Group>
-                    <InputForm nameOfClass={"name-input"} name={"name"} placeholder={"Your Name"} onChange={inputHandler} value={name} />
-                </Form.Group>
-            </Form>
+            <form>
+                <div className="form-group row">
+                    <label className="col-2 col-form-label-sm"> Your name: </label>
+                    <div className="">
+                        <input type="text" className="form-control-sm" onChange={ inputHandler } value={name}/>
+                    </div>
+                </div>
+            </form>
         </div>
     )
 }
