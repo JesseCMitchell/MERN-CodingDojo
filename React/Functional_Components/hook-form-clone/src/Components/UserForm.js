@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Form, Button, FormGroup } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
 const UserForm = props => {
     // Destructuring props into "inputs" and "setInputs" variables
