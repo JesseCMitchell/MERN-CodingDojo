@@ -5,6 +5,7 @@ import { Routes, Route, Link, useParams } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Text from './components/Text';
+import Color from './components/Color';
 import './App.css';
 
 const Location = props => {
@@ -24,6 +25,8 @@ function App() {
 			<Routes>
 				<Route path='/home' element={<Home />} />
 				<Route path='/:text' element={<Text />} />
+				<Route path='/:word/:wordColor/:backgroundColor' element={<Color />} />
+
 				<Route path='/about' element={<About />} />
 				<Route path='/location/:city' element={<Location />} />
 			</Routes>
