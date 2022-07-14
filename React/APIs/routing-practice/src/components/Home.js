@@ -1,9 +1,15 @@
 /** @format */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
-	return <h1 style={{ color: 'red' }}>Welcome!</h1>;
+const Home = props => {
+	return (
+		<div>
+			<h1 style={{ color: 'red' }}>Welcome!</h1>
+			<Link to={'/about'}>Go to About</Link>
+		</div>
+	);
 };
 
 export default Home;
