@@ -1,10 +1,9 @@
-import React from 'react';
-import { useParams } from "react-router-dom";
+/** @format */
 
-const Home = (props) => {
-    return(
-        <h1>Welcome</h1>
-    )
-}
+import React from 'react';
+
+const Home = () => {
+	return <h1 style={{ color: 'red' }}>Welcome!</h1>;
+};
 
 export default Home;
