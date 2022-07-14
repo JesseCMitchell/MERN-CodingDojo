@@ -1,19 +1,26 @@
-import './App.css';
-import { Router } from '@reach/router';
-
-import Home from "./components/Home"
-
+import React from "react";
+import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import DisplayText from "./components/display-text";
+import DisplayColorWord from "./components/display-color-word";
+import "./App.css";
 
 function App() {
-return (
-	<div className="App bg-light p-3 text-center">
-	<Router>
-		<Home path="/home" />
-		<Home path="/:wordOrNumber" />
-		<Home path="/:wordOrNumber/:fontColor/:backgroundColor" />
-	</Router>    
-	</div>
-);
+  
+  return (
+    <BrowserRouter>
+    <div className="App">
+      
+        <Routes>
+          <Route path='/home' element={<Home />} />
+          <Route path='/:text' element={<DisplayText />} />
+          <Route path='/:word/:wordColor/:backgroundColor' element={<DisplayColorWord />} />
+        </Routes>
+        
+      
+    </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
