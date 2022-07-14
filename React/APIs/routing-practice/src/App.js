@@ -4,6 +4,7 @@ import React from 'react';
 import { Routes, Route, Link, useParams } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
+import Text from './components/Text';
 import './App.css';
 
 const Location = props => {
@@ -21,7 +22,8 @@ function App() {
 				<Link to='/location/burbank'>Burbank</Link>
 			</p>
 			<Routes>
-				<Route path='/' element={<Home />} />
+				<Route path='/home' element={<Home />} />
+				<Route path='/:text' element={<Text />} />
 				<Route path='/about' element={<About />} />
 				<Route path='/location/:city' element={<Location />} />
 			</Routes>
