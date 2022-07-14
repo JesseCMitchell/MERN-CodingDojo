@@ -37,8 +37,7 @@ const expected5 = [
     [-2, -5, -3, -6],
     [-3, -6, -7],
     [-3, -6, -7, -0],
-    [-3, -6, -7, -0, -0],
-];
+    [-3, -6, -7, -0, -0],];
 
 /**
  * Finds all the sets of consecutive numbers that sum to the given target sum.
