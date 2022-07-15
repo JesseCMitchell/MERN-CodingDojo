@@ -30,18 +30,7 @@ const expected3 = [1, 6];
  * @returns {Array<number>} The two indexes of the numbers in the given nums
  *    that add up to the targetSum.
  */
-// function twoSum(nums, targetSum) {
-// 	let map = {};
-// 	for (i = 0; i < nums.length; i++) {
-// 		if (!map[nums[i] + '']) {
-// 			map[targetSum - [i]] = i + '';
-// 		} else {
-// 			return [parseInt(map[nums[i]]), i];
-// 		}
-// 	}
-// 	return [];
-// }
-// console.log(twoSum(nums1, targetSum1));
+
 function twoSum(nums, targetSum) {
 	let map = {};
 	for (i = 0; i < nums.length; i++) {
