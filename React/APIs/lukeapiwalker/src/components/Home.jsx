@@ -21,7 +21,7 @@ const Home = () => {
 					Search For:{' '}
 				</label>
 				<select
-					className='ms-3 shadow'
+					className='btn btn-lg btn-secondary dropdown-toggle ms-3 shadow'
 					onChange={e => setType(e.target.value)}
 					value={type}>
 					<option value='people'>People</option>
@@ -36,7 +36,7 @@ const Home = () => {
 					onChange={e => setId(e.target.value)}
 					value={id}
 				/>
-				<button type='submit' className='ms-3 shadow'>
+				<button type='submit' className='btn-lg btn-primary ms-3 shadow'>
 					Search
 				</button>
 			</form>

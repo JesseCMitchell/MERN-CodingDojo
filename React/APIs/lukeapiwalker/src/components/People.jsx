@@ -32,13 +32,13 @@ const People = () => {
 		);
 	} else {
 		return (
-			<div>
-				<h1>{person.name}</h1>
-				<div>
-					<h3>Height: {person.height}</h3>
-					<h3>Mass: {person.mass}</h3>
-					<h3>Hair Color: {person.hair_color}</h3>
-					<h3>Skin Color: {person.skin_color}</h3>
+			<div className='card' style={{ width: '18rem;' }}>
+				<h1 className='card-header'>{person.name}</h1>
+				<div className='card-body'>
+					<h3 className='card-text'>Height: {person.height}</h3>
+					<h3 className='card-text'>Mass: {person.mass}</h3>
+					<h3 className='card-text'>Hair Color: {person.hair_color}</h3>
+					<h3 className='card-text'>Skin Color: {person.skin_color}</h3>
 				</div>
 			</div>
 		);
