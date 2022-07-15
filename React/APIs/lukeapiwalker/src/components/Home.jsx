@@ -16,7 +16,7 @@ const Home = () => {
 	};
 
 	return (
-		<div>
+		<div className='mb-5'>
 			<Form onSubmit={handleSubmit}>
 				<label className='ms-3 fs-3 fw-bold' htmlFor='type'>
 					Search For:{' '}
@@ -28,6 +28,7 @@ const Home = () => {
 					<option value='people'>People</option>
 					<option value='planets'>Planets</option>
 				</select>
+
 				<label className='ms-3 fs-3 fw-bold'> ID: </label>
 				<input
 					className='ms-3 shadow'
