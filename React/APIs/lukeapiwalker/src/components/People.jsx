@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
+import Error from './Error';
 
 const People = () => {
 	const [person, setPerson] = useState(null);
@@ -12,7 +13,7 @@ const People = () => {
 		axios
 			.get(`https://swapi.dev/api/people/${id}`)
 			.then(res => {
-				console.log(res);
+				console.log(res.data);
 				setPerson(res.data);
 			})
 			.catch(error => {
@@ -21,19 +22,27 @@ const People = () => {
 			});
 	}, [id]);
 
-	return person ? (
-		<div>
-			<h1>{person.name}</h1>
+	if (!person) {
+		return <h1>Loading...</h1>;
+	} else if (person.error) {
+		return (
 			<div>
-				<h3>Height: {person.height}</h3>
-				<h3>Mass: {person.mass}</h3>
-				<h3>Hair Color: {person.hair_color}</h3>
-				<h3>Skin Color: {person.skin_color}</h3>
+				<Error />
 			</div>
-		</div>
-	) : (
-		<h1>Loading...</h1>
-	);
+		);
+	} else {
+		return (
+			<div>
+				<h1>{person.name}</h1>
+				<div>
+					<h3>Height: {person.height}</h3>
+					<h3>Mass: {person.mass}</h3>
+					<h3>Hair Color: {person.hair_color}</h3>
+					<h3>Skin Color: {person.skin_color}</h3>
+				</div>
+			</div>
+		);
+	}
 };
 
 export default People;

@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form, Button } from 'react-bootstrap';
 
 const Home = () => {
 	const [type, setType] = useState('people');
@@ -17,7 +16,7 @@ const Home = () => {
 
 	return (
 		<div className='mb-5'>
-			<Form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit}>
 				<label className='ms-3 fs-3 fw-bold' htmlFor='type'>
 					Search For:{' '}
 				</label>
@@ -37,8 +36,10 @@ const Home = () => {
 					onChange={e => setId(e.target.value)}
 					value={id}
 				/>
-				<Button className='ms-3 shadow'>Search</Button>
-			</Form>
+				<button type='submit' className='ms-3 shadow'>
+					Search
+				</button>
+			</form>
 		</div>
 	);
 };
