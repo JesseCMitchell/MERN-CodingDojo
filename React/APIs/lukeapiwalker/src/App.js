@@ -9,7 +9,7 @@ import Error from './components/Error';
 
 function App() {
 	return (
-		<div className='App'>
+		<div className='container'>
 			<Home />
 			<Routes>
 				<Route path='/people/:id' element={<People />} />
