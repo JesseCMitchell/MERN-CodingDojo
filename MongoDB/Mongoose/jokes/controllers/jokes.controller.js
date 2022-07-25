@@ -42,3 +42,13 @@ module.exports.deleteJoke = (req, res) => {
 		.then(result => res.json({ result: result }))
 		.catch(err => res.json({ message: 'Something went wrong', error: err }));
 };
+
+// module.exports.createNewNinja = (req, res) => {
+// 	Ninja.create(req.body)
+// 		.then(newlyCreatedNinja => {
+// 			res.json({ results: newlyCreatedNinja });
+// 		})
+// 		.catch(err => {
+// 			res.json(err);
+// 		});
+// };
